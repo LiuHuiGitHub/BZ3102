@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"D:\Program Files\IAR Systems\common\bin\cspybat" -f "F:\GitHub\SanJiang\BZ3102\trunk\Project\settings\BZ3101.Debug.general.xcl" --backend -f "F:\GitHub\SanJiang\BZ3102\trunk\Project\settings\BZ3101.Debug.driver.xcl" 
+"D:\Program Files\IAR Systems\common\bin\cspybat" -f "F:\GitHub\SanJiang\BZ3102\trunk\Project\settings\BZ3102.Debug.general.xcl" --backend -f "F:\GitHub\SanJiang\BZ3102\trunk\Project\settings\BZ3102.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\Program Files\IAR Systems\common\bin\cspybat" -f "F:\GitHub\SanJiang\BZ3102\trunk\Project\settings\BZ3101.Debug.general.xcl" "--debug_file=%~1" --backend -f "F:\GitHub\SanJiang\BZ3102\trunk\Project\settings\BZ3101.Debug.driver.xcl" 
+"D:\Program Files\IAR Systems\common\bin\cspybat" -f "F:\GitHub\SanJiang\BZ3102\trunk\Project\settings\BZ3102.Debug.general.xcl" "--debug_file=%~1" --backend -f "F:\GitHub\SanJiang\BZ3102\trunk\Project\settings\BZ3102.Debug.driver.xcl" 
 
 @echo off 
 :end

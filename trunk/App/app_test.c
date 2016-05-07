@@ -180,13 +180,16 @@ void setTempSave(void)
 static UINT8 u8_step = 0;
 void testModeIntoHandler(void)
 {
-	if(u8_step == 0)
+#define MAX_RESET_COUNTER		100
+	static UINT8 resetCounter = 0;
+	if(u8_step == 0 && e_mode == MODE_STANDBY)
 	{
 		if(e_keyEvent != KEY_EVENT_NONE)
 		{
 			if(e_keyEvent == KEY_EVENT_TIME_SET)
 			{
 				u8_step = 1;
+				resetCounter = 0;
 			}
 			else
 			{
@@ -256,17 +259,35 @@ void testModeIntoHandler(void)
 		{
 			if(e_keyEvent == KEY_EVENT_START)
 			{
-				u8_step = 6;
-				u8_ledDisBuff[0] = 0;	//O
-				u8_ledDisBuff[1] = 1;	//1
-				e_mode = MODE_POWER_ON;
-				u8_powerOnDelay = 5;
+				if(resetCounter < MAX_RESET_COUNTER)
+				{
+					u8_step = 6;
+					u8_ledDisBuff[0] = 0;	//O
+					u8_ledDisBuff[1] = 1;	//1
+					e_mode = MODE_POWER_ON;
+					u8_powerOnDelay = 5;
+				}
+				else
+				{
+					u8_step = 0;
+				}
 			}
 			else
 			{
 				u8_step = 0;
 			}
 		}
+	}
+	else if(u8_step ==6)
+	{
+		if(e_keyEvent != KEY_EVENT_NONE)
+		{
+			u8_step = 0;
+		}
+	}
+	if(resetCounter < MAX_RESET_COUNTER)
+	{
+		resetCounter++;
 	}
 }
 

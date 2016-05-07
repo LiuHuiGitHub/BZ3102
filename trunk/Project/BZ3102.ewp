@@ -492,7 +492,7 @@
         </option>
         <option>
           <name>OOCOutputFile</name>
-          <state>BZ3101.hex</state>
+          <state>BZ3102.hex</state>
         </option>
         <option>
           <name>OOCCommandLineProducer</name>
@@ -547,7 +547,7 @@
         </option>
         <option>
           <name>IlinkOutputFile</name>
-          <state>BZ3101.out</state>
+          <state>BZ3102.out</state>
         </option>
         <option>
           <name>IlinkDebugInfoEnable</name>
