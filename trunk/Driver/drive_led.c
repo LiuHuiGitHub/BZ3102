@@ -212,19 +212,19 @@ void drv_ledHandler1ms(void)
 	{
 		if(PC_IDR_IDR7 == 0)
 		{
-			b_TempSet = TRUE;
-		}
-		else
-		{
-			b_TempSet = FALSE;
-		}
-		if(PC_IDR_IDR6 == 0)
-		{
 			b_TimeSet = TRUE;
 		}
 		else
 		{
 			b_TimeSet = FALSE;
+		}
+		if(PC_IDR_IDR6 == 0)
+		{
+			b_TempSet = TRUE;
+		}
+		else
+		{
+			b_TempSet = FALSE;
 		}
 		if(PC_IDR_IDR4 == 0)
 		{
